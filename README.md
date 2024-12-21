@@ -43,7 +43,7 @@ Welcome to my personal portfolio website repository! This modern and responsive 
 1. Clone the repository:
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/AndreyDAraya/my_porfolio.git
 ```
 
 2. Install dependencies:
@@ -78,7 +78,7 @@ The site will be available at `http://localhost:4321`
 
 ## 🚀 Deployment
 
-This project is configured to deploy to GitHub Pages automatically using GitHub Actions. Follow these steps to deploy:
+This project is configured to deploy automatically to andrey-d-araya.dev using GitHub Actions. Follow these steps to deploy:
 
 1. Create a new repository on GitHub if you haven't already
 
@@ -89,19 +89,12 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
+git remote add origin https://github.com/AndreyDAraya/my_porfolio.git
 git push -u origin main
 ```
 
-3. In your GitHub repository:
-
-   - Go to Settings > Pages
-   - Under "Build and deployment":
-     - Source: Select "GitHub Actions"
-   - Save the changes
-
-4. The site will automatically deploy when you push to the main branch. You can find your site at:
-   https://andreydAraya.github.io
+3. The site will automatically deploy when you push to the main branch. You can find your site at:
+   https://andrey-d-araya.dev
 
 Note: The first deployment might take a few minutes to complete. You can check the progress in the "Actions" tab of your repository.
 
