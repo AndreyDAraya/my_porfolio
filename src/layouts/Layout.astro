@@ -11,11 +11,30 @@ const { title } = Astro.props;
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Andrey Araya - Software Engineer Portfolio"
+      content="Andrey Araya - Full Stack & Flutter Developer specializing in scalable applications, clean architecture, and AI/ML integration. Experienced in mobile development and microservices."
     />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="keywords"
+      content="Software Engineer, Flutter Developer, Full Stack Developer, Clean Architecture, Mobile Development, Microservices, AI/ML, React, Node.js, Astro, Costa Rica Developer"
+    />
+    <meta name="author" content="Andrey Delgado Araya" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Andrey Araya - Full Stack & Flutter Developer specializing in scalable applications, clean architecture, and AI/ML integration. Experienced in mobile development and microservices."
+    />
+    <meta property="og:image" content="/og-image.png" />
+
+    <link rel="canonical" href={Astro.url} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
@@ -23,6 +42,36 @@ const { title } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Andrey Araya",
+        "url": "https://andrey-d-araya.dev",
+        "jobTitle": "Software Engineer",
+        "description": "Full Stack & Flutter Developer specializing in scalable applications, clean architecture, and AI/ML integration",
+        "sameAs": [
+          "https://github.com/AndreyDAraya",
+          "https://www.linkedin.com/in/andrey-d-araya/"
+        ],
+        "knowsAbout": [
+          "Flutter Development",
+          "React",
+          "Node.js",
+          "Clean Architecture",
+          "Microservices",
+          "AI/ML",
+          "Full Stack Development",
+          "Mobile Development"
+        ],
+        "nationality": {
+          "@type": "Country",
+          "name": "Costa Rica"
+        }
+      }
+    </script>
   </head>
   <body
     class="bg-[#0a0a0a] text-white font-sans opacity-0 transition-opacity duration-500"
