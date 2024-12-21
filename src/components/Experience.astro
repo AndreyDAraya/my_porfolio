@@ -1,0 +1,122 @@
+---
+const experience = [
+  {
+    title: "FullStack Developer",
+    company: "Bitcode Enterprise",
+    period: "October 2022 - Current",
+    type: "Part-time",
+    highlights: [
+      "Developed and maintained three major projects using Flutter for web, Android, and iOS platforms",
+      "Worked on over 10 projects, utilizing Flutter, MERN, and PERN stacks",
+      "Implemented user-centered designs and interfaces",
+      "Integrated Google Maps and navigation features",
+    ],
+  },
+  {
+    title: "Founder & Software Engineer",
+    company: "ERASOFT",
+    period: "July 2024 - Current",
+    highlights: [
+      "Founded ERASOFT, leading development of two parallel MVP projects",
+      "Created WebRTC-based digital counter application using Flutter and Firebase",
+      "Pioneered real-time translation in video calls using WebRTC and OpenAI",
+      "Full-stack development with Express, Node.js, PostgreSQL, React, and Next.js",
+    ],
+  },
+  {
+    title: "Principal Flutter Engineer",
+    company: "Obsidiam Investment Group SA",
+    period: "February 2024 - October 2024",
+    highlights: [
+      "Led mobile application architecture design and implementation",
+      "Developed secure money transaction processing systems",
+      "Optimized Android and iOS app performance",
+      "Implemented comprehensive monitoring strategies",
+    ],
+  },
+  {
+    title: "Senior Flutter Developer | Backend Kotlin Developer",
+    company: "Tul SAS",
+    period: "March 2022 - January 2024",
+    highlights: [
+      "Led development of Android and iOS applications for LATAM's largest hardware e-commerce platform",
+      "Implemented backend services with Kotlin",
+      "Developed QR scanning library for inventory management",
+      "Ensured high product quality and security standards",
+    ],
+  },
+];
+
+const skills = [
+  "Flutter/Dart",
+  "React/Next.js",
+  "Astro",
+  "Node.js",
+  "Clean Architecture",
+  "TDD",
+  "CI/CD",
+  "Docker",
+  "GraphQL",
+  "MERN Stack",
+  "Firebase",
+  "Kotlin",
+  "WebRTC",
+  "TypeScript",
+  "PostgreSQL",
+  "MongoDB",
+];
+---
+
+<div class="space-y-12">
+  <!-- Experience Section -->
+  <div class="space-y-6">
+    <div class="space-y-8">
+      {
+        experience.map((job) => (
+          <div class="glow p-6 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-800 hover:border-accent/50 transition-all duration-300">
+            <div class="flex justify-between items-start mb-2">
+              <div>
+                <h4 class="text-xl font-bold text-primary">{job.title}</h4>
+                <p class="text-gray-300">{job.company}</p>
+              </div>
+              <div class="text-right">
+                <p class="text-gray-400">{job.period}</p>
+                {job.type && <p class="text-sm text-accent">{job.type}</p>}
+              </div>
+            </div>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+              {job.highlights.map((highlight) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- More Link -->
+  <div class="pl-2">
+    <a
+      href="https://cv-andreydelgadoaraya.my.canva.site/andrey-d-araya-cv"
+      target="_blank"
+      class="text-gray-400 hover:text-accent transition-colors inline-flex items-center gap-1 group"
+    >
+      More
+      <span class="text-lg group-hover:translate-x-1 transition-transform"
+        >+</span
+      >
+    </a>
+  </div>
+
+  <!-- Skills -->
+  <div class="flex flex-wrap gap-3">
+    {
+      skills.map((skill) => (
+        <span class="px-4 py-2 bg-gray-900/60 backdrop-blur-sm rounded-full border border-gray-800 hover:border-accent/50 transition-all duration-300 hover:scale-105">
+          {skill}
+        </span>
+      ))
+    }
+  </div>
+</div>

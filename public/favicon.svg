@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
+  <path fill="#8B5CF6" d="M18 2.0845
+    a 15.9155 15.9155 0 0 1 0 31.831
+    a 15.9155 15.9155 0 0 1 0 -31.831"
+  />
+  <path fill="white" d="M18 4.0845
+    a 13.9155 13.9155 0 0 1 0 27.831
+    a 13.9155 13.9155 0 0 1 0 -27.831"
+  />
+  <text x="12" y="24" fill="#8B5CF6" font-family="Inter, sans-serif" font-size="18" font-weight="bold">A</text>
+</svg>

@@ -1,0 +1,154 @@
+---
+import ParticleBackground from "../components/ParticleBackground.astro";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Andrey Araya - Software Engineer Portfolio"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-[#0a0a0a] text-white font-sans opacity-0 transition-opacity duration-500"
+  >
+    <ParticleBackground />
+    <div
+      class="relative z-10 min-h-screen bg-gradient-to-br from-[#0a0a0a]/80 via-[#1a1a1a]/50 to-[#0a0a0a]/80"
+    >
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15),transparent_70%)]"
+        >
+        </div>
+        <div class="relative z-10">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: #0a0a0a;
+  }
+
+  ::selection {
+    background-color: theme(colors.accent);
+    color: white;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient;
+  }
+
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translateY(0) rotateX(0) rotateY(0);
+    }
+    50% {
+      transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .glow {
+    position: relative;
+  }
+
+  .glow::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: theme(colors.accent);
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .glow:hover::after {
+    opacity: 0.2;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 8s linear infinite;
+    background-size: 200% auto;
+  }
+</style>
+
+<script>
+  // Reveal animations
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, observerOptions);
+
+  // Show content when everything is loaded
+  window.addEventListener("load", () => {
+    document.body.classList.add("opacity-100");
+    document.querySelectorAll(".reveal").forEach((element) => {
+      observer.observe(element);
+    });
+  });
+</script>

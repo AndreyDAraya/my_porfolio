@@ -1,0 +1,198 @@
+---
+import Layout from "../layouts/Layout.astro";
+import GitHubStats from "../components/GitHubStats.astro";
+import Experience from "../components/Experience.astro";
+
+const repositories = [
+  {
+    title: "Smart Tasks",
+    description:
+      "A cross-platform task management application built with Flutter and clean architecture principles. Features a modern UI, real-time synchronization, and support for Android, iOS, and desktop platforms.",
+    link: "https://github.com/AndreyDAraya/smart_tasks",
+    tags: ["Flutter", "Cross-Platform", "Clean Architecture"],
+    isNew: true,
+    stars: "55+",
+  },
+  {
+    title: "Clean Architecture CLI",
+    description:
+      "A powerful command-line tool for scaffolding clean architecture projects, streamlining the development process.",
+    link: "https://github.com/AndreyDAraya/clean_arch_cli",
+    tags: ["Flutter", "CLI", "Clean Architecture"],
+    isNew: true,
+  },
+  {
+    title: "Flutter Clean Architecture",
+    description:
+      "A comprehensive template demonstrating clean architecture implementation in Flutter applications.",
+    link: "https://github.com/AndreyDAraya/flutter-clean-architecture",
+    tags: ["Flutter", "Clean Architecture", "SOLID"],
+    isNew: true,
+  },
+  {
+    title: "Node.js MVC Microservice",
+    description:
+      "A scalable microservice template implementing MVC architecture pattern with Node.js.",
+    link: "https://github.com/AndreyDAraya/microservice_node",
+    tags: ["Node.js", "MVC", "Microservices"],
+    isNew: true,
+  },
+];
+
+const techStack = [
+  { name: "Flutter", icon: "📱" },
+  { name: "React", icon: "⚛️" },
+  { name: "Astro", icon: "🚀" },
+  { name: "Node.js", icon: "💻" },
+  { name: "Clean Architecture", icon: "🏗️" },
+  { name: "Microservices", icon: "🔄" },
+  { name: "AI/ML", icon: "🤖" },
+];
+---
+
+<Layout title="Andrey Araya | Software Engineer">
+  <main class="py-20 relative space-y-32">
+    <!-- Hero Section -->
+    <section class="mb-20">
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+        <!-- Left Column: Introduction -->
+        <div class="lg:col-span-3 space-y-8">
+          <div class="text-center lg:text-left reveal space-y-6">
+            <div class="relative inline-block">
+              <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+                <span class="gradient-text">Andrey D' Araya</span>
+              </h1>
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-30 blur-2xl -z-10"
+              >
+              </div>
+            </div>
+            <div class="relative inline-block">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 drop-shadow-lg"
+              >
+                FullStack / Flutter Developer
+              </h2>
+              <div
+                class="absolute -inset-1 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl -z-10"
+              >
+              </div>
+            </div>
+          </div>
+          <div
+            class="reveal backdrop-blur-sm bg-gray-900/40 p-6 rounded-lg border border-gray-800/50"
+            style="transition-delay: 300ms;"
+          >
+            <p class="text-lg text-gray-200 leading-relaxed">
+              I'm a passionate software engineer from Costa Rica
+              <span class="inline-block animate-bounce">🇨🇷</span>, focused on
+              building scalable, maintainable, and high-quality applications. My
+              expertise spans mobile development, microservices, and AI/ML
+              integration, with a strong emphasis on Flutter development and
+              clean architecture principles.
+            </p>
+          </div>
+          <div
+            class="flex lg:justify-start justify-center gap-4 reveal"
+            style="transition-delay: 400ms;"
+          >
+            <a
+              href="https://github.com/AndreyDAraya"
+              target="_blank"
+              class="glow px-6 py-3 bg-primary/20 hover:bg-primary/30 border border-primary/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            >
+              GitHub Profile
+            </a>
+            <a
+              href="https://www.linkedin.com/in/andrey-d-araya/"
+              target="_blank"
+              class="glow px-6 py-3 bg-accent/20 hover:bg-accent/30 border border-accent/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: GitHub Stats -->
+        <div class="lg:col-span-2 reveal" style="transition-delay: 500ms;">
+          <GitHubStats />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="reveal">
+      <h2 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
+        <span class="gradient-text">Tech Stack</span>
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {
+          techStack.map(({ name, icon }, index) => (
+            <div
+              class="floating glow p-4 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-800 hover:border-accent/50 transition-all duration-300 hover:scale-105"
+              style={`animation-delay: ${index * 200}ms`}
+            >
+              <div class="text-2xl mb-2">{icon}</div>
+              <div class="font-mono text-gray-300">{name}</div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="reveal">
+      <h2 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
+        <span class="gradient-text">Featured Projects</span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {
+          repositories.map(
+            ({ title, description, link, tags, isNew, stars }, index) => (
+              <a
+                href={link}
+                target="_blank"
+                class="group glow p-6 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-800 hover:border-primary/50 transition-all duration-300 hover:scale-105 reveal"
+                style={`transition-delay: ${index * 200}ms`}
+              >
+                <div class="flex items-start justify-between mb-4">
+                  <h3 class="text-xl font-bold group-hover:text-primary transition-colors drop-shadow-lg">
+                    {title}
+                  </h3>
+                  <div class="flex items-center gap-2">
+                    {stars && (
+                      <span class="px-2 py-1 text-xs bg-primary/20 text-primary rounded-full backdrop-blur-sm">
+                        ⭐ {stars}
+                      </span>
+                    )}
+                    {isNew && (
+                      <span class="px-2 py-1 text-xs bg-accent/30 text-accent rounded-full animate-pulse backdrop-blur-sm">
+                        New
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <p class="text-gray-300 mb-4">{description}</p>
+                <div class="flex flex-wrap gap-2">
+                  {tags.map((tag) => (
+                    <span class="px-2 py-1 text-xs bg-gray-800/80 backdrop-blur-sm rounded-full group-hover:bg-gray-700/80 transition-colors">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </a>
+            )
+          )
+        }
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="reveal">
+      <h2 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
+        <span class="gradient-text">Experience & Skills</span>
+      </h2>
+      <Experience />
+    </section>
+  </main>
+</Layout>
