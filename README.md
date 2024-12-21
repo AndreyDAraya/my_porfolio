@@ -1,47 +1,81 @@
-# Astro Starter Kit: Minimal
+# My Portfolio Website 🚀
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Welcome to my personal portfolio website repository! This modern and responsive portfolio is built using Astro.js and styled with Tailwind CSS.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## 🛠️ Technologies Used
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Astro.js](https://astro.build/) - The web framework for content-driven websites
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+- TypeScript - For type-safe JavaScript development
+- Particle.js - For interactive background effects
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Project Structure
 
 ```text
 /
-├── public/
+├── public/              # Static assets
+│   └── favicon.svg
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/      # Reusable components
+│   │   ├── Experience.astro
+│   │   ├── GitHubStats.astro
+│   │   └── ParticleBackground.astro
+│   ├── layouts/        # Page layouts
+│   │   └── Layout.astro
+│   ├── pages/          # Application pages
+│   │   └── index.astro
+│   └── scripts/        # JavaScript utilities
+│       └── reveal.js
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ✨ Features
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Responsive design that works on all devices
+- Interactive particle background for visual appeal
+- GitHub statistics integration
+- Experience showcase section
+- Smooth reveal animations
+- TypeScript for enhanced development experience
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🚀 Getting Started
 
-## 🧞 Commands
+1. Clone the repository:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+git clone [repository-url]
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2. Install dependencies:
 
-## 👀 Want to learn more?
+```bash
+npm install
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:4321`
+
+## 🧞 Available Commands
+
+| Command             | Action                                           |
+| :------------------ | :----------------------------------------------- |
+| `npm install`       | Installs dependencies                            |
+| `npm run dev`       | Starts local dev server at `localhost:4321`      |
+| `npm run build`     | Build your production site to `./dist/`          |
+| `npm run preview`   | Preview your build locally, before deploying     |
+| `npm run astro ...` | Run CLI commands like `astro add`, `astro check` |
+
+## 🔧 Configuration
+
+- `astro.config.mjs` - Configure Astro build settings
+- `tailwind.config.mjs` - Customize Tailwind CSS
+- `tsconfig.json` - TypeScript configuration
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
