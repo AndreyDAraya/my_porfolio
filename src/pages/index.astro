@@ -5,11 +5,39 @@ import Experience from "../components/Experience.astro";
 
 const repositories = [
   {
+    title: "Tech York Time",
+    description:
+      "A modern news reader application built with Flutter showcasing MVVM architecture and clean code principles. Features a vintage newspaper-style UI, real-time news updates from Hacker News API, and performance optimizations. Implements advanced Flutter concepts like custom shimmer loading effects, smooth page transitions, and efficient state management.",
+    link: "https://github.com/AndreyDAraya/flutter_mvvm",
+    tags: [
+      "Flutter",
+      "MVVM",
+      "Riverpod",
+      "Freezed",
+      "Go_Router",
+      "Dio",
+      "Performance Optimization",
+      "API Integration",
+      "SOLID Principles",
+      "Custom UI",
+    ],
+    isNew: true,
+  },
+  {
     title: "Smart Tasks",
     description:
       "A cross-platform task management application built with Flutter and clean architecture principles. Features a modern UI, real-time synchronization, and support for Android, iOS, and desktop platforms.",
     link: "https://github.com/AndreyDAraya/smart_tasks",
-    tags: ["Flutter", "Cross-Platform", "Clean Architecture"],
+    tags: [
+      "Flutter",
+      "Clean Architecture",
+      "BloC State Management",
+      "Modular",
+      "Performance Optimization",
+      "API Integration",
+      "SOLID Principles",
+      "Custom UI",
+    ],
     isNew: true,
     stars: "55+",
   },
@@ -26,7 +54,14 @@ const repositories = [
     description:
       "A comprehensive template demonstrating clean architecture implementation in Flutter applications.",
     link: "https://github.com/AndreyDAraya/flutter-clean-architecture",
-    tags: ["Flutter", "Clean Architecture", "SOLID"],
+    tags: [
+      "Flutter",
+      "Clean Architecture",
+      "BloC State Management",
+      "Modular",
+      "Performance Optimization",
+      "SOLID Principles",
+    ],
     isNew: true,
   },
   {
@@ -43,8 +78,9 @@ const techStack = [
   { name: "Flutter", icon: "📱" },
   { name: "React", icon: "⚛️" },
   { name: "Astro", icon: "🚀" },
-  { name: "Node.js", icon: "💻" },
   { name: "Clean Architecture", icon: "🏗️" },
+  { name: "MVVM", icon: "🏗️" },
+  { name: "Node.js", icon: "💻" },
   { name: "Microservices", icon: "🔄" },
   { name: "AI/ML", icon: "🤖" },
 ];
