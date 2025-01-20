@@ -5,6 +5,24 @@ import Experience from "../components/Experience.astro";
 
 const repositories = [
   {
+    title: "Flask (Python)  Microservice Template",
+    description:
+      "A comprehensive Flask microservice template implementing hexagonal (ports & adapters) architecture. Features include rich domain models, CRUD operations, JWT authentication, Swagger documentation, PostgreSQL with SQLAlchemy, Docker support, and automated testing with pytest. Perfect starting point for building scalable Python microservices.",
+    link: "https://github.com/AndreyDAraya/microservice_flask_example.git",
+    tags: [
+      "Python",
+      "Flask",
+      "Clean Architecture",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Docker",
+      "JWT",
+      "Swagger",
+      "pytest",
+    ],
+    isNew: true,
+  },
+  {
     title: "Tech York Time",
     description:
       "A modern news reader application built with Flutter showcasing MVVM architecture and clean code principles. Features a vintage newspaper-style UI, real-time news updates from Hacker News API, and performance optimizations. Implements advanced Flutter concepts like custom shimmer loading effects, smooth page transitions, and efficient state management.",
@@ -76,6 +94,7 @@ const repositories = [
 
 const techStack = [
   { name: "Flutter", icon: "📱" },
+  { name: "Python", icon: "🐍" },
   { name: "React", icon: "⚛️" },
   { name: "Astro", icon: "🚀" },
   { name: "Clean Architecture", icon: "🏗️" },
