@@ -1,253 +1,281 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GitHubStats from "../components/GitHubStats.astro";
-import Experience from "../components/Experience.astro";
+import Section from "../components/Section.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
 
-const repositories = [
+const experience = [
   {
-    title: "Flask (Python)  Microservice Template",
-    description:
-      "A comprehensive Flask microservice template implementing hexagonal (ports & adapters) architecture. Features include rich domain models, CRUD operations, JWT authentication, Swagger documentation, PostgreSQL with SQLAlchemy, Docker support, and automated testing with pytest. Perfect starting point for building scalable Python microservices.",
-    link: "https://github.com/AndreyDAraya/microservice_flask_example.git",
-    tags: [
-      "Python",
-      "Flask",
-      "Clean Architecture",
-      "PostgreSQL",
-      "SQLAlchemy",
-      "Docker",
-      "JWT",
-      "Swagger",
-      "pytest",
+    title: "Founder / CTO",
+    company: "Innovation Lab",
+    date: "2025 – Present",
+    description: [
+      "AI Agents and Intelligent Automation: Development and implementation of autonomous AI agents for business process automation.",
+      "Marketplaces and Custom Development: Architecture of scalable platforms using Flutter, React, and Odoo 19.",
+      "Web3 and Blockchain: Design and implementation of Smart Contracts and decentralized solutions.",
+      "IaaS: Consulting and implementation of scalable cloud and local infrastructures.",
     ],
-    isNew: true,
   },
   {
-    title: "Tech York Time",
-    description:
-      "A modern news reader application built with Flutter showcasing MVVM architecture and clean code principles. Features a vintage newspaper-style UI, real-time news updates from Hacker News API, and performance optimizations. Implements advanced Flutter concepts like custom shimmer loading effects, smooth page transitions, and efficient state management.",
-    link: "https://github.com/AndreyDAraya/flutter_mvvm",
-    tags: [
-      "Flutter",
-      "MVVM",
-      "Riverpod",
-      "Freezed",
-      "Go_Router",
-      "Dio",
-      "Performance Optimization",
-      "API Integration",
-      "SOLID Principles",
-      "Custom UI",
+    title: "Fullstack Developer (Freelance)",
+    company: "Self-employed",
+    date: "2024 – Present",
+    description: [
+      "Blue Bank (Curaçao): Architecture and full-stack development of mission-critical banking application using Supabase, AWS, Node.js, React, and Flutter.",
+      "Analytical Systems: Comprehensive solution for monitoring and managing ATM reports, achieving 70% coverage of Costa Rica's national network.",
+      "Momentum: Development of private token through Smart Contracts on Avalanche and Ethereum.",
+      "Technologica World: Architecture and development of social network MVP with Flutter and Python.",
     ],
-    isNew: true,
   },
   {
-    title: "Smart Tasks",
-    description:
-      "A cross-platform task management application built with Flutter and clean architecture principles. Features a modern UI, real-time synchronization, and support for Android, iOS, and desktop platforms.",
-    link: "https://github.com/AndreyDAraya/smart_tasks",
-    tags: [
-      "Flutter",
-      "Clean Architecture",
-      "BloC State Management",
-      "Modular",
-      "Performance Optimization",
-      "API Integration",
-      "SOLID Principles",
-      "Custom UI",
+    title: "Co-Founder / CTO",
+    company: "Dentify",
+    date: "2024 – Present",
+    description: [
+      "Multi-Vendor Marketplace: Development of Flutter mobile application integrated with WordPress/WooCommerce.",
+      "Hybrid Architecture: Combining Flutter's native experience with WooCommerce ecosystem.",
+      "Technical Leadership: Definition of technology architecture and team coordination.",
     ],
-    isNew: true,
-    stars: "55+",
   },
   {
-    title: "Clean Architecture CLI",
-    description:
-      "A powerful command-line tool for scaffolding clean architecture projects, streamlining the development process.",
-    link: "https://github.com/AndreyDAraya/clean_arch_cli",
-    tags: ["Flutter", "CLI", "Clean Architecture"],
-    isNew: true,
-  },
-  {
-    title: "Flutter Clean Architecture",
-    description:
-      "A comprehensive template demonstrating clean architecture implementation in Flutter applications.",
-    link: "https://github.com/AndreyDAraya/flutter-clean-architecture",
-    tags: [
-      "Flutter",
-      "Clean Architecture",
-      "BloC State Management",
-      "Modular",
-      "Performance Optimization",
-      "SOLID Principles",
+    title: "Chief Innovation Officer (CIO)",
+    company: "Bitcode Enterprise",
+    date: "Feb 2025 – Aug 2025",
+    description: [
+      "Responsible for technology innovation strategy and continuous improvement of development processes.",
     ],
-    isNew: true,
   },
   {
-    title: "Node.js MVC Microservice",
-    description:
-      "A scalable microservice template implementing MVC architecture pattern with Node.js.",
-    link: "https://github.com/AndreyDAraya/microservice_node",
-    tags: ["Node.js", "MVC", "Microservices"],
-    isNew: true,
+    title: "Senior FullStack Developer",
+    company: "Bitcode Enterprise",
+    date: "Oct 2022 – Feb 2025",
+    description: [
+      "Technical leadership in over 14 strategic projects using Flutter, MERN, and PERN stacks.",
+      "Design and implementation of microservices architecture with Python, Java, and Node.js.",
+      "Development of enterprise systems: CRMs, e-commerce platforms, and delivery applications.",
+    ],
+  },
+  {
+    title: "Senior Software Engineer",
+    company: "Obsidiam Investment Group SA",
+    date: "Feb 2024 – Dec 2024",
+    description: [
+      "High-security crypto financial application development with Flutter and Hexagonal Architecture.",
+      "Advanced security practices for Web3/crypto transactions using Java Spring Boot.",
+      "Critical performance optimization achieving 35% reduction in load time.",
+    ],
+  },
+  {
+    title: "Senior Flutter Developer & Backend Kotlin Engineer",
+    company: "Tul SAS",
+    date: "Mar 2022 – Jan 2024",
+    description: [
+      "Full-stack development for LATAM's largest hardware e-commerce platform.",
+      "Creation of proprietary QR scanning library adopted throughout the supply chain.",
+      "Implementation of data security improvements resulting in 99.9% uptime.",
+    ],
   },
 ];
 
-const techStack = [
-  { name: "Flutter", icon: "📱" },
-  { name: "Python", icon: "🐍" },
-  { name: "React", icon: "⚛️" },
-  { name: "Astro", icon: "🚀" },
-  { name: "Clean Architecture", icon: "🏗️" },
-  { name: "MVVM", icon: "🏗️" },
-  { name: "Node.js", icon: "💻" },
-  { name: "Microservices", icon: "🔄" },
-  { name: "AI/ML", icon: "🤖" },
+const skills = [
+  "Flutter",
+  "Dart",
+  "Microservices",
+  "Node.js",
+  "Python",
+  "Kotlin",
+  "Java",
+  "React",
+  "React Native",
+  "Docker",
+  "Web3",
+  "Blockchain",
+  "AI Agents",
+  "OpenAI API",
+  "Odoo",
+  "Odoo Modules",
+  "Supabase",
+  "AWS",
 ];
 ---
 
-<Layout title="Andrey Delgado Araya | Fullstack / Flutter Enginneer">
-  <main class="py-20 relative space-y-32">
+<Layout title="Andrey Delgado Araya | Senior Software Engineer & CTO">
+  <main class="space-y-32 mb-20">
     <!-- Hero Section -->
-    <section class="mb-20">
-      <div class="grid lg:grid-cols-5 gap-8 items-start">
-        <!-- Left Column: Introduction -->
-        <div class="lg:col-span-3 space-y-8">
-          <div class="text-center lg:text-left reveal space-y-6">
-            <div class="relative inline-block">
-              <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
-                <span class="gradient-text">Andrey D' Araya</span>
-              </h1>
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-accent opacity-30 blur-2xl -z-10"
-              >
-              </div>
-            </div>
-            <div class="relative inline-block">
-              <h2
-                class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 drop-shadow-lg"
-              >
-                FullStack / Flutter Developer
-              </h2>
-              <div
-                class="absolute -inset-1 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl -z-10"
-              >
-              </div>
-            </div>
-          </div>
+    <section
+      class="min-h-screen flex flex-col justify-center items-center text-center relative overflow-hidden"
+    >
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08),transparent_50%)] pointer-events-none"
+      >
+      </div>
+
+      <div class="relative mb-10 group">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-[#D4AF37] to-[#F4E4BC] rounded-full blur opacity-30 group-hover:opacity-60 transition duration-500"
+        >
+        </div>
+        <img
+          src="https://avatars.githubusercontent.com/u/160779272?v=4"
+          alt="Andrey Delgado Araya"
+          class="relative w-48 h-48 rounded-full border-2 border-[#D4AF37]/50 shadow-2xl object-cover grayscale hover:grayscale-0 transition duration-500"
+        />
+      </div>
+
+      <h1 class="text-6xl md:text-8xl font-bold mb-6 tracking-tight">
+        <span
+          class="bg-clip-text text-transparent bg-gradient-to-b from-[#F4E4BC] via-[#D4AF37] to-[#8a6e1e] drop-shadow-lg"
+        >
+          Andrey D Araya
+        </span>
+      </h1>
+
+      <p
+        class="text-xl md:text-2xl text-[#F4E4BC]/80 mb-10 max-w-3xl mx-auto font-light tracking-wide leading-relaxed"
+      >
+        Senior Software Engineer | Co-Founder & CTO at Dentify <br
+          class="hidden md:block"
+        />
+        <span class="text-[#D4AF37]">Flutter & Microservices Expert</span>
+      </p>
+
+      <div class="flex gap-6 justify-center">
+        <a
+          href="https://www.linkedin.com/in/andrey-d-araya/"
+          target="_blank"
+          class="px-10 py-4 bg-[#D4AF37] hover:bg-[#F4E4BC] text-black rounded-full font-bold transition-all hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/AndreyDAraya"
+          target="_blank"
+          class="px-10 py-4 bg-transparent hover:bg-white/5 text-[#D4AF37] border border-[#D4AF37] rounded-full font-bold transition-all hover:scale-105"
+        >
+          GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <Section title="About Me" class="relative">
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-[#D4AF37]/5 to-transparent pointer-events-none"
+      >
+      </div>
+      <div
+        class="prose prose-invert max-w-none text-lg text-slate-300 leading-relaxed text-center md:text-left"
+      >
+        <p
+          class="mb-10 text-xl md:text-2xl font-light text-center max-w-4xl mx-auto"
+        >
+          <span class="text-[#D4AF37] font-normal"
+            >Senior Software Engineer</span
+          > with over 10 years of specialized experience in full-stack solution architecture
+          and cross-platform mobile development. Recognized for leading digital transformation
+          of high-growth organizations in LATAM.
+        </p>
+        <div class="grid md:grid-cols-2 gap-10 mt-16">
           <div
-            class="reveal backdrop-blur-sm bg-gray-900/40 p-6 rounded-lg border border-gray-800/50"
-            style="transition-delay: 300ms;"
+            class="bg-[#0a0a0a] p-8 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-colors duration-500 shadow-lg shadow-black/50"
           >
-            <p class="text-lg text-gray-200 leading-relaxed">
-              I'm a passionate software engineer from Costa Rica
-              <span class="inline-block animate-bounce">🇨🇷</span>, focused on
-              building scalable, maintainable, and high-quality applications. My
-              expertise spans mobile development, microservices, and AI/ML
-              integration, with a strong emphasis on Flutter development and
-              clean architecture principles.
+            <h3 class="text-2xl font-bold text-[#F4E4BC] mb-4">
+              Technical Specialization
+            </h3>
+            <p class="text-slate-400">
+              Microservices architecture, Flutter/Dart, backend development
+              (Node.js, Python, Kotlin, Java), integration of emerging
+              technologies (WebRTC, real-time AI, Web3/Blockchain), and security
+              practices for financial and crypto applications.
             </p>
           </div>
           <div
-            class="flex lg:justify-start justify-center gap-4 reveal"
-            style="transition-delay: 400ms;"
+            class="bg-[#0a0a0a] p-8 rounded-2xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-colors duration-500 shadow-lg shadow-black/50"
           >
-            <a
-              href="https://github.com/AndreyDAraya"
-              target="_blank"
-              class="glow px-6 py-3 bg-primary/20 hover:bg-primary/30 border border-primary/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-            >
-              GitHub Profile
-            </a>
-            <a
-              href="https://www.linkedin.com/in/andrey-d-araya/"
-              target="_blank"
-              class="glow px-6 py-3 bg-accent/20 hover:bg-accent/30 border border-accent/30 rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-            >
-              LinkedIn
-            </a>
+            <h3 class="text-2xl font-bold text-[#F4E4BC] mb-4">
+              Leadership & Innovation
+            </h3>
+            <p class="text-slate-400">
+              Co-founder and CTO of Dentify (dental e-commerce) and Innovation
+              Lab, with proven experience in MVP creation, critical performance
+              optimization, and technical team management.
+            </p>
           </div>
         </div>
-
-        <!-- Right Column: GitHub Stats -->
-        <div class="lg:col-span-2 reveal" style="transition-delay: 500ms;">
-          <GitHubStats />
-        </div>
       </div>
-    </section>
+    </Section>
 
-    <!-- Tech Stack Section -->
-    <section class="reveal">
-      <h2 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
-        <span class="gradient-text">Tech Stack</span>
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <!-- Experience Section -->
+    <Section title="Professional Experience">
+      <div class="grid gap-10">
+        {experience.map((job) => <ExperienceCard {...job} />)}
+      </div>
+    </Section>
+
+    <!-- Skills Section -->
+    <Section title="Skills & Technologies">
+      <div class="flex flex-wrap gap-4 justify-center max-w-5xl mx-auto">
         {
-          techStack.map(({ name, icon }, index) => (
-            <div
-              class="floating glow p-4 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-800 hover:border-accent/50 transition-all duration-300 hover:scale-105"
-              style={`animation-delay: ${index * 200}ms`}
-            >
-              <div class="text-2xl mb-2">{icon}</div>
-              <div class="font-mono text-gray-300">{name}</div>
-            </div>
+          skills.map((skill) => (
+            <span class="px-6 py-3 bg-[#0a0a0a] hover:bg-[#D4AF37] text-slate-300 hover:text-black rounded-full border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all duration-300 cursor-default text-base font-medium shadow-sm hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+              {skill}
+            </span>
           ))
         }
       </div>
-    </section>
+    </Section>
 
-    <!-- Projects Section -->
-    <section class="reveal">
-      <h2 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
-        <span class="gradient-text">Featured Projects</span>
-      </h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        {
-          repositories.map(
-            ({ title, description, link, tags, isNew, stars }, index) => (
-              <a
-                href={link}
-                target="_blank"
-                class="group glow p-6 bg-gray-900/60 backdrop-blur-sm rounded-lg border border-gray-800 hover:border-primary/50 transition-all duration-300 hover:scale-105 reveal"
-                style={`transition-delay: ${index * 200}ms`}
-              >
-                <div class="flex items-start justify-between mb-4">
-                  <h3 class="text-xl font-bold group-hover:text-primary transition-colors drop-shadow-lg">
-                    {title}
-                  </h3>
-                  <div class="flex items-center gap-2">
-                    {stars && (
-                      <span class="px-2 py-1 text-xs bg-primary/20 text-primary rounded-full backdrop-blur-sm">
-                        ⭐ {stars}
-                      </span>
-                    )}
-                    {isNew && (
-                      <span class="px-2 py-1 text-xs bg-accent/30 text-accent rounded-full animate-pulse backdrop-blur-sm">
-                        New
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <p class="text-gray-300 mb-4">{description}</p>
-                <div class="flex flex-wrap gap-2">
-                  {tags.map((tag) => (
-                    <span class="px-2 py-1 text-xs bg-gray-800/80 backdrop-blur-sm rounded-full group-hover:bg-gray-700/80 transition-colors">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
-            )
-          )
-        }
+    <!-- Education Section -->
+    <Section title="Education">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="bg-[#0a0a0a] p-8 rounded-2xl border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-300 group"
+        >
+          <h3
+            class="font-bold text-xl text-white group-hover:text-[#D4AF37] transition-colors mb-2"
+          >
+            Bachelor's Degree in Computer Science
+          </h3>
+          <p class="text-[#F4E4BC] text-sm">
+            Universidad Nacional de Costa Rica (UNA)
+          </p>
+          <p class="text-slate-500 text-xs mt-4">2021</p>
+        </div>
+        <div
+          class="bg-[#0a0a0a] p-8 rounded-2xl border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-300 group"
+        >
+          <h3
+            class="font-bold text-xl text-white group-hover:text-[#D4AF37] transition-colors mb-2"
+          >
+            Certificate in Computer Applications
+          </h3>
+          <p class="text-[#F4E4BC] text-sm">
+            Universidad Nacional de Costa Rica (UNA)
+          </p>
+          <p class="text-slate-500 text-xs mt-4">2017</p>
+        </div>
+        <div
+          class="bg-[#0a0a0a] p-8 rounded-2xl border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-300 group"
+        >
+          <h3
+            class="font-bold text-xl text-white group-hover:text-[#D4AF37] transition-colors mb-2"
+          >
+            Technician in Business Computing
+          </h3>
+          <p class="text-[#F4E4BC] text-sm">
+            Colegio Técnico Profesional Henry Francois Pittier
+          </p>
+          <p class="text-slate-500 text-xs mt-4">2015</p>
+        </div>
       </div>
-    </section>
+    </Section>
 
-    <!-- Experience Section -->
-    <section class="reveal">
-      <h2 class="text-3xl font-bold mb-8 text-center drop-shadow-lg">
-        <span class="gradient-text">Experience & Skills</span>
-      </h2>
-      <Experience />
-    </section>
+    <!-- Footer -->
+    <footer
+      class="py-12 text-center text-slate-600 text-sm border-t border-white/5"
+    >
+      <p>
+        &copy; {new Date().getFullYear()} Andrey D Araya. All rights reserved.
+      </p>
+    </footer>
   </main>
 </Layout>

@@ -1,5 +1,7 @@
 ---
-import ParticleBackground from "../components/ParticleBackground.astro";
+import ParticlesBackground from "../components/ParticlesBackground.astro";
+import "@fontsource/outfit";
+
 interface Props {
   title: string;
 }
@@ -14,190 +16,47 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta
       name="description"
-      content="Andrey Delgado Araya - Full Stack & Flutter Developer specializing in scalable applications, clean architecture, and AI/ML integration. Experienced in mobile development and microservices."
-    />
-    <meta
-      name="keywords"
-      content="Software Engineer, Flutter Developer, Full Stack Developer, Clean Architecture, Mobile Development, Microservices, AI/ML, React, Node.js, Astro, Costa Rica Developer"
-    />
-    <meta name="author" content="Andrey Delgado Araya" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0a0a0a" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
-    <meta property="og:title" content={title} />
-    <meta
-      property="og:description"
-      content="Andrey Delgado Araya - Full Stack & Flutter Developer specializing in scalable applications, clean architecture, and AI/ML integration. Experienced in mobile development and microservices."
-    />
-    <meta property="og:image" content="/og-image.png" />
-
-    <link rel="canonical" href={Astro.url} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
+      content="Andrey Delgado Araya - Senior Software Engineer & CTO. Expert in Flutter, Microservices, and AI Agents."
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
-    <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Andrey D' Araya",
-        "url": "https://andrey-d-araya.dev",
-        "jobTitle": "Software Engineer",
-        "description": "Full Stack & Flutter Developer specializing in scalable applications, clean architecture, and AI/ML integration",
-        "sameAs": [
-          "https://github.com/AndreyDAraya",
-          "https://www.linkedin.com/in/andrey-d-araya/"
-        ],
-        "knowsAbout": [
-          "Flutter Development",
-          "React",
-          "Node.js",
-          "Clean Architecture",
-          "Microservices",
-          "AI/ML",
-          "Full Stack Development",
-          "Mobile Development"
-        ],
-        "nationality": {
-          "@type": "Country",
-          "name": "Costa Rica"
-        }
-      }
-    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body
-    class="bg-[#0a0a0a] text-white font-sans opacity-0 transition-opacity duration-500"
+    class="text-slate-300 font-sans antialiased selection:bg-yellow-500/30 selection:text-yellow-200"
   >
-    <ParticleBackground />
-    <div
-      class="relative z-10 min-h-screen bg-gradient-to-br from-[#0a0a0a]/80 via-[#1a1a1a]/50 to-[#0a0a0a]/80"
-    >
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15),transparent_70%)]"
-        >
-        </div>
-        <div class="relative z-10">
-          <slot />
-        </div>
-      </div>
+    <ParticlesBackground />
+    <div class="relative z-10">
+      <slot />
     </div>
   </body>
 </html>
 
 <style is:global>
   :root {
-    color-scheme: dark;
+    --color-gold-primary: #d4af37;
+    --color-gold-secondary: #f4e4bc;
+    --color-bg-dark: #050505;
   }
-
   html {
-    background-color: #0a0a0a;
+    font-family: "Outfit", system-ui, sans-serif;
+    background: var(--color-bg-dark);
+    scroll-behavior: smooth;
   }
 
-  ::selection {
-    background-color: theme(colors.accent);
-    color: white;
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
   }
-
-  .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient;
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
   }
-
-  .floating {
-    animation: floating 3s ease-in-out infinite;
-    transform-style: preserve-3d;
-    will-change: transform;
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+    border: 2px solid #0a0a0a;
   }
-
-  @keyframes floating {
-    0%,
-    100% {
-      transform: translateY(0) rotateX(0) rotateY(0);
-    }
-    50% {
-      transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
-    }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.6s ease-out,
-      transform 0.6s ease-out;
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .glow {
-    position: relative;
-  }
-
-  .glow::after {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    background: theme(colors.accent);
-    filter: blur(15px);
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .glow:hover::after {
-    opacity: 0.2;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .animate-gradient {
-    animation: gradient 8s linear infinite;
-    background-size: 200% auto;
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444;
   }
 </style>
-
-<script>
-  // Reveal animations
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1,
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  }, observerOptions);
-
-  // Show content when everything is loaded
-  window.addEventListener("load", () => {
-    document.body.classList.add("opacity-100");
-    document.querySelectorAll(".reveal").forEach((element) => {
-      observer.observe(element);
-    });
-  });
-</script>

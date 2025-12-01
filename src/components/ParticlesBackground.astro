@@ -1,0 +1,132 @@
+---
+import Particles from "astro-particles";
+
+const options = {
+  fullScreen: {
+    enable: true,
+    zIndex: -1,
+  },
+  background: {
+    color: "#050505",
+  },
+  fpsLimit: 120,
+  interactivity: {
+    events: {
+      onHover: {
+        enable: false,
+      },
+      resize: {
+        enable: true,
+      },
+    },
+    modes: {
+      attract: {
+        distance: 200,
+        duration: 0.4,
+        factor: 5,
+        easing: "ease-out-quad",
+        speed: 1,
+      },
+    },
+  },
+  particles: {
+    color: {
+      value: "#D4AF37",
+    },
+    links: {
+      enable: false,
+    },
+    move: {
+      direction: "bottom",
+      enable: true,
+      outModes: {
+        default: "out",
+      },
+      random: false,
+      speed: 0.5,
+      straight: false,
+      gravity: {
+        enable: false,
+      },
+    },
+    number: {
+      density: {
+        enable: true,
+        width: 800,
+        height: 800,
+      },
+      value: 40,
+    },
+    opacity: {
+      value: { min: 0.1, max: 0.6 },
+      animation: {
+        enable: true,
+        speed: 0.3,
+        sync: false,
+      },
+    },
+    shape: {
+      type: "char",
+      options: {
+        char: {
+          value: [
+            "function",
+            "var",
+            "Number",
+            "string",
+            "boolean",
+            "null",
+            "undefined",
+            "if",
+            "else",
+            "for",
+            "while",
+            "do",
+            "return",
+            "break",
+            "continue",
+            "switch",
+            "case",
+            "default",
+            "try",
+            "catch",
+            "finally",
+            "throw",
+            "print('Hello World')",
+            "{",
+            "}",
+            "[",
+            "]",
+            "<",
+            ">",
+            ";",
+            "=",
+            "!",
+            "$",
+            "`",
+          ],
+          font: "Arial",
+          style: "",
+          weight: "400",
+        },
+      },
+    },
+    size: {
+      value: { min: 6, max: 12 },
+    },
+  },
+  detectRetina: true,
+};
+---
+
+<script>
+  import { loadSlim } from "tsparticles-slim";
+
+  // @ts-ignore
+  window.particlesInit = async (engine) => {
+    await loadSlim(engine);
+    return engine;
+  };
+</script>
+
+<Particles id="tsparticles" options={options} init="particlesInit" />
